@@ -1,0 +1,57 @@
+<div class="calendar size-{{ size.toLocaleUpperCase() }}">
+  <header>
+    <h4>Calendário</h4>
+    <h3>{{ formatedCurrentDate }}</h3>
+  </header>
+
+  <nav class="calendar-controller">
+    <button (click)="changeMonth(-1)">
+      <img src="../../../assets/svgs/arrows/arrow_back.svg" alt="">
+    </button>
+    <h3>{{ controlerText }}</h3>
+    <button (click)="changeMonth(1)">
+      <img src="../../../assets/svgs/arrows/arrow_forward.svg" alt="">
+    </button>
+  </nav>
+
+  <section class="calendar-months" [ngStyle]="{'grid-template-columns': 'repeat(auto-fit, minmax(' + width + ',1fr))'}"> 
+    
+    <ng-container *ngFor="let month of monthsAvailable; let i = index">
+     <div class="month">
+        <h2>{{ calendarDateHeader(month) }}</h2>
+ 
+        <div class="calendar-days">
+          <span class="day-label" *ngFor="let dayLabel of DAYS_LABELS">{{ dayLabel }}</span>
+          
+          <div
+            class="day"
+            (click)="!dayOfMonth.inactive && emitDayClick(dayOfMonth)"
+            [style.backgroundColor]="dayOfMonth.event?.backgroudColor"
+            [style.color]="dayOfMonth.event?.fontColor"
+            [ngClass]="{
+              'inactive': dayOfMonth.inactive,
+            }"
+            *ngFor="let dayOfMonth of getMonth(month.year, month.month)"
+          >
+            <div 
+              class="event-tooltip"
+              *ngIf="!dayOfMonth.inactive"
+              [style.backgroundColor]="dayOfMonth.event?.backgroudColor"
+              [style.color]="dayOfMonth.event?.fontColor"
+            >
+              {{ dayOfMonth.event?.title }}
+            </div>
+
+            <span>{{ dayOfMonth.day }}</span>
+          </div>
+        </div>
+
+      </div>
+    </ng-container>
+
+  </section>
+</div>
+
+<button (click)="showMonth()">
+  showMonth
+</button>
