@@ -1,145 +1,19 @@
-
-$primary-500: #0E94CD;
-$secondary-500: #FF7700;
-$accent-500: #004480;
-$text-500: #464646;
-$white-500: #fff;
-$black-500: #000;
-
-
-div#calendario-eventos {
-    $sidebar-size: 100px;
-    $margin-top: 20px;
-    width: calc(100% - #{$sidebar-size});
-    height: calc(100% - #{$margin-top});
-    margin-top: $margin-top;
-    padding-inline: 10px;
-    margin-left: auto;
-
-    display: grid;
-    grid-template-columns: auto 1fr;
-}
-
-section#proximos-eventos {
-    background-color: $white-500;
-}
-
-.evento {
-   font-weight: 600; 
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto 1fr;
-    gap: 2rem;
-    width: 100%;
-    height: 100%;
-
-    h1 {
-        color: $primary-500;
-        font-size: 2em;
-        text-align: center;
-    }
-
-    div#button-row {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        padding-right: 1rem;
-    }
-
-    div#calendar {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-}
-
-.legend {
+nav {
     display: flex;
+    width: 100%;
+    background-color: rgb(47, 0, 177);
+    gap: 1rem;
+    height: 3rem;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2em;
-
-    p {
-        color: $text-500;
-    }
-
-    span {
-        font-weight: 600;
-    }
+    justify-content: center;
     
-    span#cto2 {
-        color: $secondary-500;
-    }
+    ul {
+        font-size: 1.5rem;
 
-    span#cinvest {
-        color: $accent-500;
-    }
-}
-
-.legend-block {
-    $block-size: 25px;
-
-    width: $block-size;
-    height: $block-size;
-    border-radius: 3px;
-
-    &-secondary {
-        @extend .legend-block;
-        background-color: $secondary-500;
-    }
-
-    &-accent {
-        @extend .legend-block;
-        background-color: $accent-500;
-    }
-}
-
-.button-contratos {
-    border-radius: 25px;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: 5px 15px;
-    cursor: pointer;
-    transition: all 200ms;
-
-    &:hover {
-        box-shadow: 0 0 10px 2px rgba($black-500, 0.2)
-    }
-
-    &-primary {
-        @extend .button-contratos;
-        background-color: $primary-500;
-        color: $white-500;
-    }
-
-    &-secondary {
-        @extend .button-contratos;
-        background-color: $secondary-500;
-        color: $white-500;
-    }
-
-    &-accent {
-        @extend .button-contratos;
-        background-color: $primary-500;
-        color: $white-500;
-    }
-
-    &-cancel {
-        @extend .button-contratos;
-        background-color: $primary-500;
-        color: $white-500;
-    }
-
-    &-accept {
-        @extend .button-contratos;
-        background-color: $primary-500;
-        color: $white-500;
+        a {
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+        }
     }
 }

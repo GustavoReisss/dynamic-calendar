@@ -1,0 +1,12 @@
+table {
+    margin: 0 auto;
+    box-shadow: 1px 0 5px 0px rgba($color: #000000, $alpha: 0.3);
+    border-collapse: collapse;
+
+    td,th {
+        border: 1px solid #000000;
+        padding: 3px;
+        text-align: center;
+        vertical-align: middle;
+    }
+}

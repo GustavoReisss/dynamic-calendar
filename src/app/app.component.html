@@ -1,44 +1,6 @@
-<div id="calendario-eventos">
-    <section id="proximos-eventos">
-        <h2>Próximos Eventos</h2>
+<nav>
+    <ul><a routerLink="/calendario">Calendário</a></ul>
+    <ul><a routerLink="/demanda">Demanda</a></ul>
+</nav>
 
-        <div>
-            <div 
-                class="evento"
-                *ngFor="let evento of eventos"
-                [ngStyle]="{
-                    'color': evento.fontColor
-                }"
-            >
-                <span>{{ evento.title }}</span>
-                <span>{{ evento.date | date:'dd/MM/yyyy' }}</span>
-            </div>
-        </div>
-    </section>
-    
-    <main>
-        <div id="button-row">
-            <button class="button-contratos-secondary">Gerenciar Eventos em Lote</button>
-        </div>
-        
-        <h1>Calendário de Eventos</h1>
-
-        <div id="calendar">
-            <!-- <app-calendar [events]="eventos" [months]="2" size="S" width="400px" (dayClick)="handleDayClickEvent($event)"></app-calendar> -->
-            <!-- <app-calendar [events]="eventos" [months]="2" size="M" width="400px" (dayClick)="handleDayClickEvent($event)"></app-calendar> -->
-            <app-calendar [events]="eventos" [months]="2" size="L" width="400px" (dayClick)="handleDayClickEvent($event)"></app-calendar>
-            <footer>
-                <div class="legend">
-                    <div class="legend-block-secondary"></div>
-                    <p>Eventos em <span id="cto2">Laranja</span> são eventos do CTO2</p>
-                </div>
-                <div class="legend">
-                    <div class="legend-block-accent"></div>
-                    <p>Eventos em <span id="cinvest">Azul</span> são eventos do Cinvest</p>
-                </div>
-            </footer>
-        </div>
-
-       
-    </main>
-</div>
+<router-outlet></router-outlet>
